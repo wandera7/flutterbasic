@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './textcontrol.dart';
 
 class TextShowing extends StatelessWidget {
   final List<String> texts;
@@ -9,14 +10,19 @@ class TextShowing extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      margin: const EdgeInsets.all(20),
-      child: Text(
-        texts[textIndex],
-        style: const TextStyle(fontSize: 27),
-        textAlign: TextAlign.center,
-      ),
+    return Column(
+      children: [
+        Container(
+          width: double.infinity,
+          margin: const EdgeInsets.all(20),
+          child: Text(
+            texts[textIndex],
+            style: const TextStyle(fontSize: 27),
+            textAlign: TextAlign.center,
+          ),
+        ),
+        TextControl(nextText)
+      ],
     );
   }
 }

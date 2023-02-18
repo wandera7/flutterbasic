@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import './reset.dart';
 import './text.dart';
-import './textcontrol.dart';
 
 void main() {
   runApp(MyApp());
@@ -46,8 +45,9 @@ class _MyAppState extends State<MyApp> {
         ),
         body: Column(
           children: [
-            TextShowing(_texts, _textIndex),
-            _textIndex < _texts.length? TextControl(_nextText): Reset(_resetTexts)
+            _textIndex < _texts.length
+                ? TextShowing(_texts, _textIndex, _nextText)
+                : Reset(_resetTexts)
           ],
         ),
       ),
