@@ -14,6 +14,16 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  final _texts=['What a cool car!','']
+
+
+  var _textIndex=0;
+  void _nextQuestion(){
+    setState(() {
+      _textIndex=_textIndex+1;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
