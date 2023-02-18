@@ -9,6 +9,7 @@ class Reset extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const ElevatedButton(onPressed: null, child: Text('Reset texts'));
+    return ElevatedButton(
+        onPressed: resetTexts, child: const Text('Reset texts'));
   }
 }

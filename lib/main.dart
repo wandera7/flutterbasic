@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import './reset.dart';
 import './text.dart';
 import './textcontrol.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -29,9 +30,10 @@ class _MyAppState extends State<MyApp> {
       _textIndex = _textIndex + 1;
     });
   }
-  void _resetTexts(){
+
+  void _resetTexts() {
     setState(() {
-      _textIndex=0;
+      _textIndex = 0;
     });
   }
 
@@ -45,7 +47,9 @@ class _MyAppState extends State<MyApp> {
         body: Column(
           children: [
             TextShowing(_texts, _textIndex),
-            _textIndex >_texts.length ? ElevatedButton(onPressed: null, child: Text('Change text')):Reset(_resetTexts)
+            _textIndex < _texts.length
+                ? TextControl(_nextText)
+                : Reset(_resetTexts)
           ],
         ),
       ),
