@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 class TextShowing extends StatelessWidget {
   final List<String> texts;
   final int textIndex;
+  final Function nextText;
   // ignore: prefer_const_constructors_in_immutables
-  TextShowing(this.texts, this.textIndex);
+  TextShowing(this.texts, this.textIndex,this.nextText);
 
   @override
   Widget build(BuildContext context) {

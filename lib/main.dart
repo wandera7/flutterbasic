@@ -47,9 +47,7 @@ class _MyAppState extends State<MyApp> {
         body: Column(
           children: [
             TextShowing(_texts, _textIndex),
-            _textIndex < _texts.length
-                ? TextControl(_nextText)
-                : Reset(_resetTexts)
+            _textIndex < _texts.length? TextControl(_nextText): Reset(_resetTexts)
           ],
         ),
       ),
