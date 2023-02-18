@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-
+import './reset.dart';
+import './text.dart';
+import './textcontrol.dart';
 void main() {
   runApp(MyApp());
 }
@@ -42,16 +44,8 @@ class _MyAppState extends State<MyApp> {
         ),
         body: Column(
           children: [
-            Container(
-              width: double.infinity,
-              margin: const EdgeInsets.all(20),
-              child: const Text(
-                'My question',
-                style: TextStyle(fontSize: 27),
-                textAlign: TextAlign.center,
-              ),
-            ),
-            const ElevatedButton(onPressed: null, child: Text('Change text'))
+            TextShowing(_texts, _textIndex),
+            _textIndex >_texts.length ? ElevatedButton(onPressed: null, child: Text('Change text')):Reset(_resetTexts)
           ],
         ),
       ),
