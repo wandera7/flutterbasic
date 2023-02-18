@@ -14,13 +14,22 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  final _texts=['What a cool car!','']
+  final _texts = [
+    'What a cool car!',
+    'Bet you cant beat me',
+    'I dont like you',
+    'The Weeknd is cool'
+  ];
 
-
-  var _textIndex=0;
-  void _nextQuestion(){
+  var _textIndex = 0;
+  void _nextText() {
     setState(() {
-      _textIndex=_textIndex+1;
+      _textIndex = _textIndex + 1;
+    });
+  }
+  void _resetTexts(){
+    setState(() {
+      _textIndex=0;
     });
   }
 
@@ -42,7 +51,7 @@ class _MyAppState extends State<MyApp> {
                 textAlign: TextAlign.center,
               ),
             ),
-            const ElevatedButton(onPressed: null, child:  Text('Change text'))
+            const ElevatedButton(onPressed: null, child: Text('Change text'))
           ],
         ),
       ),
