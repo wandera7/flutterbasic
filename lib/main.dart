@@ -4,7 +4,6 @@ void main() {
   runApp(MyApp());
 }
 
-
 // ignore: use_key_in_widget_constructors
 class MyApp extends StatefulWidget {
   @override
@@ -19,9 +18,24 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(title: const Text('Change the text'),),
-        body: ,
+        appBar: AppBar(
+          title: const Text('Change the text'),
+        ),
+        body: Column(
+          children: [
+            Container(
+              width: double.infinity,
+              margin: const EdgeInsets.all(20),
+              child: const Text(
+                'My question',
+                style: TextStyle(fontSize: 27),
+                textAlign: TextAlign.center,
+              ),
+            ),
+            const ElevatedButton(onPressed: null, child:  Text('Change text'))
+          ],
+        ),
       ),
-    )
+    );
   }
 }
